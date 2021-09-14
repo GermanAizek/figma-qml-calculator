@@ -1,5 +1,25 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>qml/Icon_30_plus_figma.qml</file>
+        <file>qml/Button_action_active_figma.qml</file>
+        <file>qml/Button_action_normal_figma.qml</file>
+        <file>qml/Button_cancel_active_figma.qml</file>
+        <file>qml/Button_cancel_normal_figma.qml</file>
+        <file>qml/Button_simple_active_figma.qml</file>
+        <file>qml/Button_simple_normal_figma.qml</file>
+        <file>qml/Icon_30_bkt_figma.qml</file>
+        <file>qml/Icon_30_division_figma.qml</file>
+        <file>qml/Icon_30_equal_figma.qml</file>
+        <file>qml/Icon_30_minus_figma.qml</file>
+        <file>qml/Icon_30_multiplication_figma.qml</file>
+        <file>qml/Icon_30_percent_figma.qml</file>
+        <file>qml/Icon_30_plus_minus_figma.qml</file>
+        <file>qml/Page_1_figma_Calculator_figma.qml</file>
+        <file>qml/Page_1_figma_Calculator_input_figma.qml</file>
+        <file>qml/Page_1_figma_Colors_figma.qml</file>
+        <file>qml/Page_1_figma_Icons_figma.qml</file>
+        <file>qml/Page_1_figma_Typography_figma.qml</file>
+        <file>qml/Status_bar_figma.qml</file>
+        <file>qml/Page_1_figma_Calculator_result_figma.qml</file>
     </qresource>
 </RCC>
