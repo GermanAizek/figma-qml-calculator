@@ -434,15 +434,18 @@ Window {
                 onClicked: {
                     if (!Calc.verify_operator(buffer, -3)) {
                         let tempbuf = buffer.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
+                        let procent = tempbuf[tempbuf.length - 1] * (100 / tempbuf[tempbuf.length - 2])
                         if (Calc.verify_operator(buffer)) {
                             buffer = buffer.slice(0, -1)
-                            buffer = ""
-                            buffer += tempbuf[tempbuf.length - 1] + "*(100/" + tempbuf[tempbuf.length - 2] + ")"
-                            fieldtext.text = buffer
+                            let temptext = fieldtext.text.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
+                            temptext.splice(temptext.length - 3, 3);
+                            temptext += tempbuf[tempbuf.length - 2] - procent
+                            fieldtext.text = temptext
                         } else if (buffer.length !== 0) {
-                            buffer = ""
-                            buffer += tempbuf[tempbuf.length - 1] + "*(100/" + tempbuf[tempbuf.length - 2] + ")"
-                            fieldtext.text = buffer
+                            let temptext = fieldtext.text.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
+                            temptext.splice(temptext.length - 3, 3);
+                            temptext += tempbuf[tempbuf.length - 2] - procent
+                            fieldtext.text = temptext
                         }
 
                     }
