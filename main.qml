@@ -8,7 +8,6 @@ Window {
     height: 640
     visible: true
     title: qsTr("Calculator")
-    property real result: 0.0
     property string buffer: ""
 
     Rectangle {
@@ -139,6 +138,7 @@ Window {
             Button {
                 width: 60
                 height: 60
+                property bool flag: true
                 background: Rectangle {
                     id: rectangle
                     color: parent.pressed ? "#F7E425" : "#0889a6"
@@ -153,8 +153,24 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes("()")) {
-                        buffer += "()"
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        if (flag) {
+                            buffer += "("
+                            flag = false
+                        } else {
+                            buffer += ")"
+                            flag = true
+                        }
+                        fieldtext.text = buffer
+                    } else {
+                        if (flag) {
+                            buffer += "("
+                            flag = false
+                        } else {
+                            buffer += ")"
+                            flag = true
+                        }
                         fieldtext.text = buffer
                     }
                 }
@@ -382,7 +398,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes("%")) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        buffer += "%"
+                        fieldtext.text = buffer
+                    } else if (buffer.length !== 0) {
                         buffer += "%"
                         fieldtext.text = buffer
                     }
@@ -472,7 +492,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes(".")) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        buffer += "."
+                        fieldtext.text = buffer
+                    } else if (buffer.length !== 0) {
                         buffer += "."
                         fieldtext.text = buffer
                     }
@@ -496,11 +520,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!Calc.verify_operator(buffer)) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
                         buffer += "/"
                         fieldtext.text = buffer
-                    } else {
-                        buffer.slice(0, -1)
+                    } else if (buffer.length !== 0) {
                         buffer += "/"
                         fieldtext.text = buffer
                     }
@@ -524,7 +548,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes("*")) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        buffer += "*"
+                        fieldtext.text = buffer
+                    } else if (buffer.length !== 0) {
                         buffer += "*"
                         fieldtext.text = buffer
                     }
@@ -548,7 +576,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes("-")) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        buffer += "-"
+                        fieldtext.text = buffer
+                    } else {
                         buffer += "-"
                         fieldtext.text = buffer
                     }
@@ -571,7 +603,11 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (!buffer.includes("+")) {
+                    if (Calc.verify_operator(buffer)) {
+                        buffer = buffer.slice(0, -1)
+                        buffer += "+"
+                        fieldtext.text = buffer
+                    } else if (buffer.length !== 0) {
                         buffer += "+"
                         fieldtext.text = buffer
                     }
@@ -595,8 +631,9 @@ Window {
                     }
                 }
                 onClicked: {
+                    let r = Calc.calculate_result(buffer)
                     bufftext.text = buffer
-                    fieldtext.text = Calc.calculate_result(buffer)
+                    fieldtext.text = Number.isInteger(r) ? r.toString() : r.toFixed(5).replace(/0*$/,"")
                     buffer = ""
                 }
             }
