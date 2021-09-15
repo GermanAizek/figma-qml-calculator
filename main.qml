@@ -35,7 +35,7 @@ Window {
                     text: qsTr("")
                     color: "white"
                     font.family: "Open Sans"
-                    font.pointSize: 24
+                    font.pointSize: 36
                     anchors.right: parent.right
                 }
                 x: 39
@@ -51,11 +51,11 @@ Window {
                     text: qsTr("")
                     color: "white"
                     font.family: "Open Sans"
-                    font.pointSize: 24
+                    font.pointSize: 18
                     anchors.right: parent.right
                 }
                 x: 39
-                y: 57
+                y: 40
                 width: 280
                 height: 30
             }
@@ -141,7 +141,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectanglet
@@ -165,7 +165,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle1
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle1t
@@ -187,7 +187,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle2
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle2t
@@ -209,7 +209,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle3
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle3t
@@ -231,8 +231,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle4
-                    opacity: 0.9
-                    color: "#f25e5e"
+                    color: parent.pressed ? "#FF7E7E" : "#F25E5E"
                     radius: 100
                     Text {
                         id: rectangle4t
@@ -252,9 +251,10 @@ Window {
             Button {
                 width: 60
                 height: 60
+                property bool flag: true
                 background: Rectangle {
                     id: rectangle5
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle5t
@@ -266,7 +266,13 @@ Window {
                     }
                 }
                 onClicked: {
-                    buffer = "+"
+                    if (flag) {
+                        buffer = "-" + buffer
+                        flag = false
+                    } else {
+                        buffer = buffer.slice(1, buffer.length)
+                        flag = true
+                    }
                     fieldtext.text = buffer
                 }
             }
@@ -276,7 +282,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle6
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle6t
@@ -298,7 +304,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle7
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle7t
@@ -320,7 +326,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle8
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle8t
@@ -342,7 +348,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle9
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle9t
@@ -364,7 +370,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle10
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle10t
@@ -388,7 +394,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle11
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle11t
@@ -410,7 +416,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle12
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle12t
@@ -432,7 +438,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle13
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle13t
@@ -454,7 +460,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle14
-                    color: "#b0d1d8"
+                    color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
                         id: rectangle14t
@@ -478,7 +484,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle15
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle15t
@@ -506,7 +512,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle16
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle16t
@@ -520,7 +526,7 @@ Window {
                 onClicked: {
                     if (!buffer.includes("*")) {
                         buffer += "*"
-                        fieldtext.text += buffer
+                        fieldtext.text = buffer
                     }
                 }
             }
@@ -530,7 +536,7 @@ Window {
                 height: 60
                 background: Rectangle {
                     id: rectangle17
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle17t
@@ -544,7 +550,7 @@ Window {
                 onClicked: {
                     if (!buffer.includes("-")) {
                         buffer += "-"
-                        fieldtext.text += buffer
+                        fieldtext.text = buffer
                     }
                 }
             }
@@ -553,8 +559,7 @@ Window {
                 width: 60
                 height: 60
                 background: Rectangle {
-                    id: rectangle18
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle18t
@@ -568,7 +573,7 @@ Window {
                 onClicked: {
                     if (!buffer.includes("+")) {
                         buffer += "+"
-                        fieldtext.text += buffer
+                        fieldtext.text = buffer
                     }
                 }
             }
@@ -576,9 +581,9 @@ Window {
             Button {
                 width: 60
                 height: 60
-                Rectangle {
+                background: Rectangle {
                     id: rectangle19
-                    color: "#0889a6"
+                    color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
                     Text {
                         id: rectangle19t
@@ -592,6 +597,7 @@ Window {
                 onClicked: {
                     bufftext.text = buffer
                     fieldtext.text = Calc.calculate_result(buffer)
+                    buffer = ""
                 }
             }
         }
