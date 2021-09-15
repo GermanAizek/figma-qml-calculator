@@ -1,4 +1,4 @@
-function calc(fn) {
+function calculate_result(fn) {
     return new Function('return ' + fn)();
 }
 

@@ -23,7 +23,7 @@ Window {
             id: back_calculation
             x: 0
             y: 24
-            width: 360
+            width: parent.width
             height: 156
             color: "#04bfad"
             radius: 25
@@ -64,10 +64,65 @@ Window {
         Rectangle {
             id: status_bar
             x: 0
-            y: 2
-            width: 360
+            y: 0
+            width: parent.width
             height: 48
             color: "#04bfad"
+            anchors.right: parent.right
+
+            Grid {
+                id: gridbar
+                width: parent.width - (parent.width - 110)
+                height: 48
+                rows: 1
+                columns: 4
+                spacing: 4
+                anchors.right: parent.right
+
+                Item {
+                    width: 16
+                    height: 32
+                    Image {
+                        anchors.centerIn: parent
+                        source: 'data:image/svg+xml;utf8,<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.977371 4.01593L10 15L19.0226 4.01593C16.5118 2.12256 13.387 1 10 1C6.61301 1 3.48822 2.12256 0.977371 4.01593Z" fill="white"/></svg>'
+                    }
+                }
+
+                Item {
+                    width: 16
+                    height: 32
+                    Image {
+                        anchors.centerIn: parent
+                        source: 'data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 15H14V1L0 15Z" fill="white"/></svg>'
+                    }
+                }
+
+                Item {
+                    width: 16
+                    height: 32
+                    Image {
+                        anchors.centerIn: parent
+                        source: 'data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.875V1L6 1V1.875H3V15H12V1.875H9Z" fill="white"/></svg>'
+                    }
+                }
+
+                Item {
+                    width: 36
+                    height: 32
+                    Text {
+                        id: timetext
+                        text: {
+                            updatesEnabled: timetext.time
+                            Qt.formatTime(new Date(), "hh:mm")
+                        }
+                        color: "white"
+                        font.family: "Open Sans"
+                        font.pointSize: 12
+                        font.bold: true
+                        anchors.centerIn: parent
+                    }
+                }
+            }
         }
 
         Grid {
@@ -470,51 +525,73 @@ Window {
                 }
             }
 
-            Rectangle {
-                id: rectangle17
+            Button {
                 width: 60
                 height: 60
-                color: "#0889a6"
-                radius: 100
-                Text {
-                    id: rectangle17t
-                    text: qsTr("-")
-                    color: "white"
-                    font.family: "Open Sans"
-                    font.pointSize: 24
-                    anchors.centerIn: parent
+                background: Rectangle {
+                    id: rectangle17
+                    color: "#0889a6"
+                    radius: 100
+                    Text {
+                        id: rectangle17t
+                        text: qsTr("-")
+                        color: "white"
+                        font.family: "Open Sans"
+                        font.pointSize: 24
+                        anchors.centerIn: parent
+                    }
+                }
+                onClicked: {
+                    if (!buffer.includes("-")) {
+                        buffer += "-"
+                        fieldtext.text += buffer
+                    }
                 }
             }
 
-            Rectangle {
-                id: rectangle18
+            Button {
                 width: 60
                 height: 60
-                color: "#0889a6"
-                radius: 100
-                Text {
-                    id: rectangle18t
-                    text: qsTr("+")
-                    color: "white"
-                    font.family: "Open Sans"
-                    font.pointSize: 24
-                    anchors.centerIn: parent
+                background: Rectangle {
+                    id: rectangle18
+                    color: "#0889a6"
+                    radius: 100
+                    Text {
+                        id: rectangle18t
+                        text: qsTr("+")
+                        color: "white"
+                        font.family: "Open Sans"
+                        font.pointSize: 24
+                        anchors.centerIn: parent
+                    }
+                }
+                onClicked: {
+                    if (!buffer.includes("+")) {
+                        buffer += "+"
+                        fieldtext.text += buffer
+                    }
                 }
             }
 
-            Rectangle {
-                id: rectangle19
+            Button {
                 width: 60
                 height: 60
-                color: "#0889a6"
-                radius: 100
-                Text {
-                    id: rectangle19t
-                    text: qsTr("=")
-                    color: "white"
-                    font.family: "Open Sans"
-                    font.pointSize: 24
-                    anchors.centerIn: parent
+                Rectangle {
+                    id: rectangle19
+                    color: "#0889a6"
+                    radius: 100
+                    Text {
+                        id: rectangle19t
+                        text: qsTr("=")
+                        color: "white"
+                        font.family: "Open Sans"
+                        font.pointSize: 24
+                        anchors.centerIn: parent
+                    }
+                }
+                onClicked: {
+                    bufftext.text = buffer
+                    fieldtext.text = Calc.calculate_result(buffer)
                 }
             }
         }
