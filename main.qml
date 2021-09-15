@@ -1,9 +1,11 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.1
 import "calc.js" as Calc
 
 Window {
+    id: window
     width: 360
     height: 640
     visible: true
@@ -29,6 +31,11 @@ Window {
 
             Item {
                 id: field
+                y: 80
+                width: parent.width - (parent.width - 281)
+                height: 60
+                anchors.right: parent.right
+                anchors.rightMargin: 39
                 Text {
                     id: fieldtext
                     text: qsTr("")
@@ -37,14 +44,15 @@ Window {
                     font.pointSize: 36
                     anchors.right: parent.right
                 }
-                x: 39
-                y: 80
-                width: 281
-                height: 60
             }
 
             Item {
                 id: buff
+                y: 40
+                width: parent.width - (parent.width - 280)
+                height: 30
+                anchors.right: parent.right
+                anchors.rightMargin: 39
                 Text {
                     id: bufftext
                     text: qsTr("")
@@ -53,10 +61,6 @@ Window {
                     font.pointSize: 18
                     anchors.right: parent.right
                 }
-                x: 39
-                y: 40
-                width: 280
-                height: 30
             }
         }
 
@@ -124,20 +128,24 @@ Window {
             }
         }
 
-        Grid {
+        GridLayout {
             id: grid
-            x: 24
             y: 204
-            width: 312
-            height: 396
+            width: parent.width - (parent.width - 312)
+            height: parent.height - (parent.height - 396)
             flow: Grid.TopToBottom
             rows: 5
             columns: 4
-            spacing: 24
+            rowSpacing: 24
+            columnSpacing: 24
+            anchors.right: parent.right
+            anchors.rightMargin: 24
 
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 property bool flag: true
                 background: Rectangle {
                     id: rectangle
@@ -179,6 +187,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle1
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -201,6 +211,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle2
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -223,6 +235,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle3
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -245,6 +259,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle4
                     color: parent.pressed ? "#FF7E7E" : "#F25E5E"
@@ -267,6 +283,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 property bool flag: true
                 background: Rectangle {
                     id: rectangle5
@@ -296,6 +314,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle6
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -318,6 +338,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle7
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -340,6 +362,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle8
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -362,6 +386,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle9
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -384,6 +410,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle10
                     color: parent.pressed ? "#F7E425" : "#0889a6"
@@ -412,6 +440,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle11
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -434,6 +464,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle12
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -456,6 +488,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle13
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -478,6 +512,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle14
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
@@ -506,6 +542,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle15
                     color: parent.pressed ? "#F7E425" : "#0889a6"
@@ -534,6 +572,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle16
                     color: parent.pressed ? "#F7E425" : "#0889a6"
@@ -562,6 +602,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle17
                     color: parent.pressed ? "#F7E425" : "#0889a6"
@@ -590,6 +632,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
@@ -617,6 +661,8 @@ Window {
             Button {
                 width: 60
                 height: 60
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 background: Rectangle {
                     id: rectangle19
                     color: parent.pressed ? "#F7E425" : "#0889a6"
