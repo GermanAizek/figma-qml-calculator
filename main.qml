@@ -151,13 +151,15 @@ Window {
                     id: rectangle
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectanglet
-                        text: qsTr("()")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C12 5 9 9 9 15C9 21 12 25 12 25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 25C18 25 21 21 21 15C21 9 18 5 18 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -290,13 +292,15 @@ Window {
                     id: rectangle5
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle5t
-                        text: qsTr("+/-")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7L12 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11L4 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 19L18 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -416,13 +420,15 @@ Window {
                     id: rectangle10
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle10t
-                        text: qsTr("%")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L10 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="21" cy="20" rx="3" ry="4" stroke="white" stroke-width="2"/><ellipse cx="9" cy="10" rx="3" ry="4" stroke="white" stroke-width="2"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -548,13 +554,15 @@ Window {
                     id: rectangle15
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle15t
-                        text: qsTr("/")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5 15L5.5 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="8" r="2" fill="white"/><circle cx="15" cy="22" r="2" fill="white"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -578,13 +586,15 @@ Window {
                     id: rectangle16
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle16t
-                        text: qsTr("x")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.7175 8.2825L8.28249 21.7175" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.7175 21.7175L8.28249 8.2825" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -608,13 +618,15 @@ Window {
                     id: rectangle17
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle17t
-                        text: qsTr("-")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5 15L5.5 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -637,13 +649,15 @@ Window {
                 background: Rectangle {
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle18t
-                        text: qsTr("+")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5.5V24.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.5 15L5.5 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
@@ -667,13 +681,15 @@ Window {
                     id: rectangle19
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
-                    Text {
-                        id: rectangle19t
-                        text: qsTr("=")
-                        color: "white"
-                        font.family: "Open Sans"
-                        font.pointSize: 24
+
+                    Item {
+                        width: 16
+                        height: 32
                         anchors.centerIn: parent
+                        Image {
+                            anchors.centerIn: parent
+                            source: 'data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5 19L5.5 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.5 11L5.5 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                        }
                     }
                 }
                 onClicked: {
