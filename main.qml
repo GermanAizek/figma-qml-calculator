@@ -432,13 +432,19 @@ Window {
                     }
                 }
                 onClicked: {
-                    if (Calc.verify_operator(buffer)) {
-                        buffer = buffer.slice(0, -1)
-                        buffer += "%"
-                        fieldtext.text = buffer
-                    } else if (buffer.length !== 0) {
-                        buffer += "%"
-                        fieldtext.text = buffer
+                    if (!Calc.verify_operator(buffer, -3)) {
+                        let tempbuf = buffer.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
+                        if (Calc.verify_operator(buffer)) {
+                            buffer = buffer.slice(0, -1)
+                            buffer = ""
+                            buffer += tempbuf[tempbuf.length - 1] + "*(100/" + tempbuf[tempbuf.length - 2] + ")"
+                            fieldtext.text = buffer
+                        } else if (buffer.length !== 0) {
+                            buffer = ""
+                            buffer += tempbuf[tempbuf.length - 1] + "*(100/" + tempbuf[tempbuf.length - 2] + ")"
+                            fieldtext.text = buffer
+                        }
+
                     }
                 }
             }
