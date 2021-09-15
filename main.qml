@@ -66,8 +66,6 @@ Window {
 
         Rectangle {
             id: status_bar
-            x: 0
-            y: 0
             width: parent.width
             height: 48
             color: "#04bfad"
@@ -148,7 +146,6 @@ Window {
                 Layout.fillWidth: true
                 property bool flag: true
                 background: Rectangle {
-                    id: rectangle
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -192,11 +189,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle1
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle1t
                         text: qsTr("7")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -216,11 +211,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle2
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle2t
                         text: qsTr("4")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -240,11 +233,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle3
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle3t
                         text: qsTr("1")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -264,11 +255,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle4
                     color: parent.pressed ? "#FF7E7E" : "#F25E5E"
                     radius: 100
                     Text {
-                        id: rectangle4t
                         text: qsTr("C")
                         color: "white"
                         font.family: "Open Sans"
@@ -289,7 +278,6 @@ Window {
                 Layout.fillWidth: true
                 property bool flag: true
                 background: Rectangle {
-                    id: rectangle5
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -321,11 +309,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle6
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle6t
                         text: qsTr("8")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -345,11 +331,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle7
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle7t
                         text: qsTr("5")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -369,11 +353,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle8
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle8t
                         text: qsTr("2")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -393,11 +375,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle9
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle9t
                         text: qsTr("0")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -417,7 +397,6 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle10
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -439,12 +418,12 @@ Window {
                             buffer = buffer.slice(0, -1)
                             let temptext = fieldtext.text.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
                             temptext.splice(temptext.length - 3, 3);
-                            temptext += tempbuf[tempbuf.length - 2] - procent
+                            temptext = tempbuf[tempbuf.length - 2] - procent
                             fieldtext.text = temptext
                         } else if (buffer.length !== 0) {
                             let temptext = fieldtext.text.replace(/[\+\-\*\/\%\(\)]/g,' ').split(' ')
                             temptext.splice(temptext.length - 3, 3);
-                            temptext += tempbuf[tempbuf.length - 2] - procent
+                            temptext = tempbuf[tempbuf.length - 2] - procent
                             fieldtext.text = temptext
                         }
 
@@ -458,11 +437,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle11
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle11t
                         text: qsTr("9")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -482,11 +459,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle12
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle12t
                         text: qsTr("6")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -506,11 +481,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle13
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle13t
                         text: qsTr("3")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -530,11 +503,9 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle14
                     color: parent.pressed ? "#04BFAD" : "#b0d1d8"
                     radius: 100
                     Text {
-                        id: rectangle14t
                         text: qsTr(".")
                         color: "#024873"
                         font.family: "Open Sans"
@@ -560,7 +531,6 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle15
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -592,7 +562,6 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle16
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -624,7 +593,6 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle17
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
@@ -687,7 +655,6 @@ Window {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 background: Rectangle {
-                    id: rectangle19
                     color: parent.pressed ? "#F7E425" : "#0889a6"
                     radius: 100
 
